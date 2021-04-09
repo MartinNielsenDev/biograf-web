@@ -14,11 +14,14 @@
     </div>
   </div>
   <div *ngIf="loggedIn" class="tickets-container">
+    <div *ngIf="movieTickets!==null&&movieTickets.length===0">Your tickets will appear below, go browse some movies!
+    </div>
     <div *ngFor="let ticket of movieTickets" class="ticket">
       <div class="ticket-title">{{ticket.show.title}}</div>
-      <div class="ticket-time">{{ticket.show.time * 1000 | date:"dd MMM - HH:mm"}}</div>
-      <div class="ticket-length">{{ticket.show.length}} minutes</div>
+      <div>{{ticket.show.time * 1000 | date:"dd MMM - HH:mm"}}</div>
+      <div>{{ticket.show.length}} minutes</div>
       <div class="ticket-seats">{{ticket.seats.length}} seats</div>
+      <div>Theater: {{ticket.show.theater}}</div>
     </div>
   </div>
 </div>

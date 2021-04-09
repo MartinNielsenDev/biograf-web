@@ -35,7 +35,7 @@ export class BookTicketComponent implements OnInit {
     }
     this.movieService.fetchShow(showId).subscribe(
       (show: Show) => {
-        this.fetchSeats(show.theaterId);
+        this.fetchSeats(show.id, show.theaterId);
         this.fetchMovie(show.movieId);
         this.show = show;
         this.show.datetime = new Date(show.time * 1000);
@@ -89,8 +89,8 @@ export class BookTicketComponent implements OnInit {
     );
   }
 
-  fetchSeats(theaterId: number): void {
-    this.fetchSeatsService.fetchSeats(theaterId).subscribe(
+  fetchSeats(showId: number, theaterId: number): void {
+    this.fetchSeatsService.fetchSeats(showId, theaterId).subscribe(
       (seats: Seat[]) => {
         this.seats = seats;
         this.organizedSeats = [];

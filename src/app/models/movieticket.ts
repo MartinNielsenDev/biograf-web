@@ -6,6 +6,7 @@ export class MovieTicket {
     time: number;
     title: string;
     length: number;
+    theater: string;
   };
   seats: number[];
 }

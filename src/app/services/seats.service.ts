@@ -18,9 +18,9 @@ export class SeatsService {
     return throwError(error.message);
   }
 
-  fetchSeats(theaterId: number): Observable<Seat[]> {
+  fetchSeats(showId: number, theaterId: number): Observable<Seat[]> {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('jwt')}`);
-    return this.http.get(`${environment.apiUrl}/seats?theater=${theaterId}`, {headers}).pipe(
+    return this.http.get(`${environment.apiUrl}/seats?show=${showId}&theater=${theaterId}`, {headers}).pipe(
       map((response: Seat[]) => {
         return response;
       }),
