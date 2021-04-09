@@ -1,0 +1,24 @@
+<div style="text-align: center">
+  <div *ngIf="error" class="error">{{error}}</div>
+  <div *ngIf="!loggedIn" class="login-container">
+    <div>
+      <input [(ngModel)]="username" type="text" placeholder="Email">
+    </div>
+    <div>
+      <input [(ngModel)]="password" type="password" placeholder="Password">
+    </div>
+    <div>
+      <div (click)="login()" class="btn login-btn">
+        Login
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loggedIn" class="tickets-container">
+    <div *ngFor="let ticket of movieTickets" class="ticket">
+      <div class="ticket-title">{{ticket.show.title}}</div>
+      <div class="ticket-time">{{ticket.show.time * 1000 | date:"dd MMM - HH:mm"}}</div>
+      <div class="ticket-length">{{ticket.show.length}} minutes</div>
+      <div class="ticket-seats">{{ticket.seats.length}} seats</div>
+    </div>
+  </div>
+</div>

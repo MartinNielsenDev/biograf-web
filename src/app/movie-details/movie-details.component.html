@@ -1,0 +1,26 @@
+<div class="container">
+  <div *ngIf="movie==null" class="loading"></div>
+  <div *ngIf="movie!=null" class="inner-container">
+    <img class="movie-poster" width="300px" src="assets/images/posters/{{movie.posterUrl}}" alt="{{movie.title}}">
+  </div>
+  <div *ngIf="movie!=null" class="inner-container">
+    <h1 class="movie-title">{{movie.title}}</h1>
+    <div>({{movie.length}} minutes)</div>
+    <span>{{movie.description}}</span>
+    <div class="genres">
+      <a *ngFor="let genre of movie.genres">{{genre}}</a>
+    </div>
+    <div class="btn-container">
+      <div *ngIf="shows==null" class="loading"></div>
+      <div>
+        <div *ngFor="let show of shows">
+          <a [routerLink]="['/book', show.id ]">
+            <div class="btn">
+              {{show.datetime | date:'dd MMM - HH:mm'}}
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

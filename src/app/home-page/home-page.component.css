@@ -1,0 +1,61 @@
+.login-container {
+
+}
+
+.login-container input {
+  background: #444;
+  font-size: 16px;
+  color: #fff;
+  border: 1px solid #666;
+  width: 200px;
+  height: 37px;
+  border-radius: 2px;
+  padding-left: 10px;
+  margin: 7px 0;
+}
+
+.login-btn {
+  display: inline-block;
+  border: 1px solid #666;
+  margin-top: 20px;
+}
+
+.error {
+  color: #ff0000;
+}
+
+.tickets-container {
+  display: flex;
+  justify-content: center;
+}
+
+.ticket {
+  font-size: 12px;
+  position: relative;
+  background: #444;
+  float: left;
+  padding: 20px 30px;
+  margin: 20px;
+  border: 4px dotted #ffa500;
+  min-width: 120px;
+}
+
+.ticket-title {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.ticket-time {
+
+}
+
+.ticket-length {
+
+}
+
+.ticket-seats {
+  margin-top: 15px;
+  font-size: 18px;
+}

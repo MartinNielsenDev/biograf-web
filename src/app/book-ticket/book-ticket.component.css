@@ -1,0 +1,108 @@
+section {
+  margin: 0 auto;
+}
+
+.cinema {
+  width: 600px;
+}
+
+.information {
+  display: flex;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.ticket-selector {
+  font-size: 16px;
+  text-align: center;
+  width: 60px;
+  height: 30px;
+  background-color: #444;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.ticket-options {
+  width: 500px;
+  padding-bottom: 30px;
+}
+
+.ticket-buttons {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.ticket-options .movie-information {
+  font-size: 13px;
+}
+
+.ticket-options .movie-information > h1 {
+  color: #add8e6;
+  font-size: 30px;
+}
+
+.ticket-options .movie-information .ticket-type {
+  margin-bottom: 50px;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.information .box {
+  width: 15px;
+  height: 15px;
+  margin: 1px 4px 20px 10px;
+}
+
+.seat {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  border-radius: 2px;
+  margin: 0 7px;
+  cursor: pointer;
+}
+
+.empty {
+  background-color: #555;
+}
+
+.selected {
+  background-color: #00e100;
+}
+
+.reserved {
+  background-color: #ff0000;
+}
+
+.cinema .screen {
+  text-align: center;
+  background-color: #add8e6;
+  display: block;
+  color: #000;
+  text-shadow: 0 0 0;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  min-height: 36px;
+  padding: 7px 0;
+}
+
+.btn {
+  display: inline-block;
+}
+
+.error {
+  text-align: center;
+}
+
+.error > h1 {
+  color: #ff8080;
+}

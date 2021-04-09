@@ -1,0 +1,54 @@
+<div class="nav-background">
+  <nav>
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/">
+        <img src="assets/images/logo.png" width="30px" alt="Martin Experiences logo">
+        <span>Martin <span style="color:#ffbf00">experiences</span></span>
+      </a>
+    </div>
+    <div class="navbar-links">
+      <ul>
+        <li>
+          <a routerLink="/">Home</a>
+        </li>
+        <li *ngIf="loggedIn">
+          <a routerLink="browse">Browse movies</a>
+        </li>
+        <li *ngIf="loggedIn">
+          <a routerLink="/" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="background-section"></div>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <section>
+    <h3>Help menu</h3>
+    <ul>
+      <li>
+        <a href="#">About Us</a>
+      </li>
+      <li>
+        <a href="#">Contact Us</a>
+      </li>
+      <li>
+        <a href="#">FAQ</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>Information</h3>
+    <ul>
+      <li>
+        <a href="#">Privacy Policy</a>
+      </li>
+      <li>
+        <a href="#">Terms of Service</a>
+      </li>
+    </ul>
+  </section>
+</footer>

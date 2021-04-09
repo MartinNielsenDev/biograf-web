@@ -1,0 +1,40 @@
+<div class="container">
+  <div *ngIf="movie!=null&&movie.id==undefined" class="error">
+    <h1>404 - Not Found</h1>
+    <span>Could not find the selected show</span>
+  </div>
+  <div *ngIf="movie==null" class="loading"></div>
+  <section *ngIf="movie!=null&&movie.id>0" class="ticket-options">
+    <div class="movie-information">
+      <h1>{{movie.title}}</h1>
+      <div>{{show.datetime | date:'dd MMMM - HH:mm'}}</div>
+      <div class="ticket-type">Ticket Type: {{movie.ticketType}}</div>
+    </div>
+    <label>
+      <select (change)="changeTicketAmount($event.target.value)" class="ticket-selector">
+        <option [value]="option" *ngFor="let option of selectedTicketOptions" value="{{option}}">{{option}}</option>
+      </select>
+      <span>ticket<span *ngIf="amountOfSeats>1">s</span></span>
+    </label>
+    <span> - total price DKK <span class="price">{{movie.price * amountOfSeats}}</span></span>
+  </section>
+  <section *ngIf="movie!=null&&movie.id>0" class="cinema">
+    <div class="screen">Screen</div>
+    <div class="information">
+      <div class="box selected"></div>
+      Selected seat
+      <div class="box reserved"></div>
+      Reserved seat
+      <div class="box empty"></div>
+      Empty seat
+    </div>
+    <div>
+      <div *ngFor="let seats of organizedSeats" class="row">
+        <div *ngFor="let seat of seats" (click)="selectSeat(seat)" [class]="seatClasses(seat)"></div>
+      </div>
+    </div>
+  </section>
+  <section class="ticket-buttons">
+    <div (click)="reserveTickets()" class="btn">Reserve</div>
+  </section>
+</div>
